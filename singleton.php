@@ -36,12 +36,12 @@ class Tigger {
         return self::$variable;
     }
 
-    public function roar() {
+    public function roar() : string {
         echo "Grhhhh!" . PHP_EOL;
         self::$count++;
     }
 
-    public function getCounter() {
+    public function getCounter() : string {
         $roar = self::$count;
         echo "El numero de rugidos es de: " . $roar . PHP_EOL;
     }
@@ -51,3 +51,9 @@ class Tigger {
 Singleton por llamadas a su método de creación estático. */
 
 $singleton->getInstance();
+
+/* El diseño singleton nos permite modelar un codigo de manera a que no se pueda crear mas de un objeto
+de una misma clase, utilizandose del modificador de acceso private en los atributos y construct, haciendo
+publico el metodo getInstance(), responsable por instanciar la clase una sola vez, devolvendo el mismo
+objeto siempre que se llama el metodo getInstance();*/
+?>
