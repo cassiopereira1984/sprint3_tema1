@@ -29,8 +29,10 @@ class Singleton {
         /*Implementa una inicialización diferida dentro del método estático. Debe crear un nuevo objeto en su 
         primera llamada y colocarlo dentro del campo estático. El método deberá devolver siempre esa instancia 
         en todas las llamadas siguientes.*/
-        self::$variable = new Singleton();
-        return;
+        if(!isset(self::$variable)) {
+            self::$variable = new Singleton();
+        }
+        return self::$variable;
     }
 }
 
